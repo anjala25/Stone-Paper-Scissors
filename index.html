@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rock Paper Scissors Deluxe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>Rock Paper Scissors Deluxe</h1>
+
+    <div class="controls">
+      <label>🎮 Difficulty:
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </label>
+
+      <label>🏁 Match Format:
+        <select id="match-format">
+          <option value="3">Best of 3</option>
+          <option value="5">Best of 5</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="scoreboard">
+      <p>👤 You: <span id="user-score">0</span></p>
+      <p>💻 Computer: <span id="computer-score">0</span></p>
+    </div>
+
+    <div class="score-bar">
+      <progress id="user-bar" value="0" max="10"></progress>
+      <progress id="computer-bar" value="0" max="10"></progress>
+    </div>
+
+    <p id="status-message">Make your move!</p>
+
+    <div class="buttons">
+      <button onclick="playGame('rock')" id="rock">🪨 Rock</button>
+      <button onclick="playGame('paper')" id="paper">📄 Paper</button>
+      <button onclick="playGame('scissors')" id="scissors">✂️ Scissors</button>
+    </div>
+
+    <div class="result">
+      <p id="user-choice">Your choice: </p>
+      <p id="computer-choice">Computer's choice: </p>
+      <p id="game-result">Result: </p>
+    </div>
+
+    <button class="reset-btn" onclick="resetGame()">🔄 Reset Game</button>
+    <button id="play-again-btn" onclick="resetGame()" style="display: none;">🔁 Play Again</button>
+
+    <div class="stats">
+      <p>Total Games: <span id="total-games">0</span></p>
+      <p>Win Rate: <span id="win-rate">0%</span></p>
+    </div>
+
+    <div class="history">
+      <h3>Round History:</h3>
+      <ul id="history-list"></ul>
+    </div>
+
+    <div id="victory-banner" style="display: none;">🎉 You Won the Match! 🎉</div>
+    <div id="defeat-banner" style="display: none;">💻 Computer Wins! Better luck next time! 💻</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
